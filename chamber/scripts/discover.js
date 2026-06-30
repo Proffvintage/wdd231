@@ -10,7 +10,7 @@ places.forEach((place, i) => {
     <figure><img src="${place.image}" alt="${place.name}" loading="lazy"></figure>
     <address>${place.address}</address>
     <p>${place.description}</p>
-    <button id="learn-more-button">Learn More</button>
+    <button class="learn-more-button">Learn More</button>
   `;
   cardsContainer.appendChild(card);
 });

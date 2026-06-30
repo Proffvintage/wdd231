@@ -27,13 +27,11 @@ if (pricingList) {
       required: true,
       options: [
         { value: "", text: "-- Select a Service --" },
-        ...services
-          .filter(s => s.value !== "windows")
-          .map(s => ({ value: s.value, text: s.name }))
+        ...services.map(s => ({ value: s.value, text: s.name }))
       ]
     },
-    { type: "number", label: "Number of cars:", id: "visits", min: 1, placeholder: "e.g. 1" },
-    { type: "number", label: "Distance (miles):", id: "windows", min: 0, placeholder: "e.g. 5" }
+    { type: "number", label: "Number of cars:", id: "carsCount", min: 1, placeholder: "e.g. 1" },
+    { type: "number", label: "Distance (miles):", id: "distanceMiles", min: 0, placeholder: "e.g. 5" }
   ];
 
   // Render Quote Form
@@ -96,24 +94,13 @@ if (pricingList) {
         return;
       }
 
-      const visits = parseInt(document.getElementById('visits').value, 10) || 0;
-      const windows = parseInt(document.getElementById('windows').value, 10) || 0;
-      const garage = parseInt(document.getElementById('garage').value, 10) || 0;
-      const large = parseInt(document.getElementById('largeRoom').value, 10) || 0;
-      const small = parseInt(document.getElementById('smallRoom').value, 10) || 0;
+      const carsCount = parseInt(document.getElementById('carsCount').value, 10) || 1;
+      const distanceMiles = parseInt(document.getElementById('distanceMiles').value, 10) || 0;
 
       const baseRate = services.find(s => s.value === serviceType)?.rate || 0;
-      const windowRate = services.find(s => s.value === "windows").rate;
-      const garageRate = serviceType === "garage" ? 0 : services.find(s => s.value === "garage").rate;
-      const largeRate = serviceType === "largeRoom" ? 0 : services.find(s => s.value === "largeRoom").rate;
-      const smallRate = serviceType === "smallRoom" ? 0 : services.find(s => s.value === "smallRoom").rate;
-
-      const total =
-        (baseRate * visits) +
-        (windowRate * windows) +
-        (garageRate * garage) +
-        (largeRate * large) +
-        (smallRate * small);
+      // Charging a travel fee of $2 per mile
+      const travelFee = distanceMiles * 2;
+      const total = (baseRate * carsCount) + travelFee;
 
       document.getElementById('quoteResult').textContent = `Estimated Quote: $${total.toFixed(2)}`;
     });
