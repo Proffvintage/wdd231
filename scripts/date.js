@@ -1,7 +1,7 @@
 // current date.js
 // This script sets the current year and last modified date for the footer
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Set current year
     const currentYearSpan = document.getElementById("currentYear");
     const currentYear = new Date().getFullYear();

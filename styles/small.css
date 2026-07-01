@@ -3,7 +3,9 @@
    =================================== */
 
 /* === RESET & BASE === */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -13,7 +15,8 @@ body {
     font-family: 'Roboto', 'Montserrat', sans-serif;
     background-color: #f5f5f5;
     color: #222;
-    overflow-x: hidden; /* prevent horizontal scroll */
+    overflow-x: hidden;
+    /* prevent horizontal scroll */
     max-width: 100%;
 }
 
@@ -21,7 +24,7 @@ body {
 header {
     background-color: white;
     padding: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-top {
@@ -123,7 +126,7 @@ main h2 {
 .about-sections {
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     min-height: 200px;
 }
@@ -210,7 +213,7 @@ main h2 {
     padding: 1rem;
     background-color: white;
     border-radius: 0 0 5px 5px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .completed-course-button {
