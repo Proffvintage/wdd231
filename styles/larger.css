@@ -45,8 +45,8 @@
     .nav-button a.active,
     .nav-button a[aria-current="page"] {
         border-left: none;
-        border-bottom: 3px solid #f0a500;
-        color: #f0a500;
+        border-bottom: 3px solid #167f2f;
+        color: #21c948;
         background-color: #444;
     }
 
