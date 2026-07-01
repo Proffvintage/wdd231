@@ -1,260 +1,304 @@
+/* ===================================
+   WDD231 — small.css (Mobile First)
+   =================================== */
 
+/* === RESET & BASE === */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+    overflow-x: hidden; /* prevent horizontal scroll */
+    max-width: 100%;
+}
 
-/* header */
-
+/* === HEADER === */
 header {
-  background-color: white;
-  padding: .5rem;
+    background-color: white;
+    padding: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header-top {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .site-logo {
-  width: 90px;
-  height: auto;
+    width: 60px;
+    height: auto;
 }
 
-span {
-    font-size: 1.5rem;
+.header-top span {
+    font-size: 1.3rem;
     font-weight: bold;
-}
-
-
-h1 {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-nav {
-  margin-top: 1rem;
-  background-color: #333;
-}
-
-
-#mobile-nav {
-  display: none;
-  background-color: #333;
-}
-
-#mobile-nav.show {
-  display: block;
+    flex: 1;
 }
 
 #hamburger {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: #333;
-  cursor: pointer;
-  margin-left: auto;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0.25rem 0.5rem;
 }
 
-/* Style nav links inside dropdown */
+/* === NAVIGATION === */
+#mobile-nav {
+    display: none;
+    background-color: #333;
+}
+
+#mobile-nav.show {
+    display: block;
+}
+
 .navigation {
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    gap: 0;
 }
 
 .nav-button a {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
+    display: block;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s;
 }
 
 .nav-button a:hover {
-  background-color: #555;
+    background-color: #555;
 }
 
-
-
-
-
-.navigation {
-  display: flex;
-  justify-content: flex-start;
-  list-style: none;
-  padding: 0.5rem 0;
-  margin: 0;
-  gap: 2rem;
+/* Wayfinding: active page link */
+.nav-button a.active,
+.nav-button a[aria-current="page"] {
+    background-color: #555;
+    border-left: 4px solid #f0a500;
+    color: #f0a500;
 }
 
-.nav-button a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.3rem;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-.nav-button a:hover {
-  background-color: #555;
-}
-
-/* main h1 */
-
+/* === MAIN === */
 main {
-    padding: .5rem;
-    
-    
+    padding: 0.75rem;
 }
 
 main h1 {
-    font-size: 2rem;
-    margin: .5rem 0;
+    font-size: 1.8rem;
+    margin: 0.5rem 0 1rem;
+    color: #222;
 }
 
 main h2 {
-    display: flex;
-    font-size: 1.5rem;
-    margin: .5rem 0;
+    font-size: 1.3rem;
+    margin: 0;
     background-color: #333;
     color: white;
-    padding: 0.5rem;
-    align-items: center;
-    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 4px 4px 0 0;
 }
 
-/* section about me */
-
-
-
+/* === ABOUT WRAPPER === */
 .about-wrapper {
-  display: flex;
-  gap: 2rem; /* space between sections */
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap; /* allows stacking on smaller screens */
-  margin: 1rem 0;
-}
-#about-me {
-    flex: 2 1 0%;
-}
-#student-photo {
-    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1rem 0;
 }
 
 .about-sections {
-  min-width: 320px;
-  background-color: lightgray;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  flex: 1 1 0%; 
-  height: 300px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    min-height: 200px;
 }
 
+.about-sections p {
+    padding: 1rem;
+    margin: 0;
+    line-height: 1.6;
+}
 
 #student-photo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-}
-#student-photo h2 {
-  width: 100%;
 }
 
 #student-photo img {
-  max-width: 100%;
-  height: 250px;
-  border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    padding: 1rem;
 }
-/* course buttons */
+
+/* === CERTIFICATE / FILTER SECTION === */
+#certificate-course {
+    margin-top: 1.5rem;
+}
+
+#certificate-course h2 {
+    margin-bottom: 0;
+}
+
 .course-buttons {
     display: flex;
     justify-content: space-evenly;
-    gap: 1rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
-    width: 100%;
-    padding: 1rem 0;
     list-style: none;
+    padding: 1rem 0;
     margin: 0;
-    padding-left: 0;
 }
 
 .course-buttons li {
-  flex: 1 1 30%;       /* Start at ~⅓ width, grow/shrink as needed */
-  min-width: 200px;    /* Prevents squishing on small screens */
-  max-width: 33%;      /* Optional: keeps them from growing too wide */
-  text-align: center;
+    flex: 1 1 30%;
+    min-width: 80px;
+    text-align: center;
 }
 
 .course-buttons .button {
-  display: inline-block;
-  background-color: #333;
-  color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  width: 90%;
-}
-.course-buttons .button:hover {
-  background-color: #555;
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s;
+    width: 100%;
 }
 
+.course-buttons .button:hover {
+    background-color: #555;
+}
+
+/* Active filter button */
+.course-buttons .button.active-filter {
+    background-color: #f0a500;
+    color: #111;
+    border-color: #c87d00;
+}
+
+/* === COMPLETED COURSES === */
 #completed-courses {
-  margin-top: 2rem;
-  text-align: center;
+    margin-top: 1.5rem;
 }
 
 .completed-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .completed-course-button {
-  background-color: #444;
-  color: white;
-  border: none;
-  padding: 0.75rem 1rem;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 0.65rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 0.95rem;
+    text-align: left;
 }
 
 .completed-course-button:hover {
-  background-color: #666;
+    background-color: #666;
 }
 
+/* Completed course — distinct green left border (criterion 11) */
+.completed-course-button.completed {
+    border-left: 5px solid #28a745;
+    background-color: #3a3a3a;
+}
 
-/* footer social media links */
+.completed-course-button.completed:hover {
+    background-color: #555;
+}
+
+.check-badge {
+    color: #5ddb7c;
+    font-weight: bold;
+    margin-right: 0.25rem;
+}
+
+/* Credit total display */
+#credit-total {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0.5rem 0 0;
+    color: #333;
+    background-color: #e8e8e8;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 100%;
+    flex-basis: 100%;
+}
+
+#credit-count {
+    color: #c87d00;
+    font-size: 1.3rem;
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0.5rem;
+    margin-top: 2rem;
+}
 
 .social-media-links {
     display: flex;
     justify-content: center;
     gap: 2rem;
     list-style: none;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     margin: 0;
 }
 
 .social-media-links li a img {
     width: 44px;
     height: 44px;
+    transition: opacity 0.2s;
 }
 
-/* footer info */
+.social-media-links li a:hover img {
+    opacity: 0.75;
+}
+
 .footer-info {
     text-align: center;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    color: black;
-    background-color: lightgray;
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.footer-info p {
+    margin: 0.25rem 0;
 }

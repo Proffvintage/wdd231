@@ -6,28 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Markson Samuel">
     <meta name="description" content="Home page for Markson Samuel's About me section">
-    <title>Home page | Markson Samuel's About Me Section </title>
+    <title>Home page | Markson Samuel's About Me Section</title>
     <link rel="icon" href="images/profile.png" type="image/png">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="header-top">
-            <img src="images/profile.png" alt="Site Logo" class="site-logo" />
+            <img src="images/profile.png" alt="Markson Samuel site logo" class="site-logo" width="90" height="90">
             <span>Markson Samuel</span>
-            <button id="hamburger" aria-label="Toggle Navigation">☰</button>
+            <button id="hamburger" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="mobile-nav">&#9776;</button>
         </div>
 
-        <nav id="mobile-nav">
+        <nav id="mobile-nav" aria-label="Main navigation">
             <ul class="navigation">
-                <li class="nav-button"><a href="index.html">Home</a></li>
+                <li class="nav-button"><a href="index.html" aria-current="page">Home</a></li>
                 <li class="nav-button"><a href="chamber/index.html">Chamber Project</a></li>
                 <li class="nav-button"><a href="final_project/index.html">Final Project</a></li>
             </ul>
@@ -43,15 +43,16 @@
                     Hi, I'm Markson Samuel from Ondo, Nigeria. I do have a strong desire to learn
                     computer programming and software development. I enjoy exploring how technology
                     can solve real-world problems and also create meaningful experiences. Whether
-                    I’m building a project from scratch or diving into new coding concepts, I’m driven
+                    I'm building a project from scratch or diving into new coding concepts, I'm driven
                     by curiosity, creativity, and a desire to grow both personally and professionally.
                 </p>
             </section>
             <section id="student-photo" class="about-sections">
                 <h2>Student Photo</h2>
-                <img src="images/profile.webp" alt="Markson SamueL" loading="lazy">
+                <img src="images/profile.webp" alt="Markson Samuel student photo" loading="lazy" width="200" height="250">
             </section>
         </div>
+
         <section id="certificate-course">
             <h2>Web Certificate Courses</h2>
             <ul class="course-buttons">
@@ -63,31 +64,42 @@
 
         <section id="completed-courses">
             <h2>Completed Courses</h2>
-            <div class="completed-buttons"></div>
+            <div class="completed-buttons">
+                <p id="credit-total">Total Credits: <span id="credit-count">0</span></p>
+            </div>
         </section>
-
     </main>
+
     <footer>
         <ul class="social-media-links">
-            <li><a href="https://github.com/proffvintage/wdd231" target="_blank" rel="noopener"
-                    aria-label="GitHub"><img src="images/github-mark.svg" width="44" height="44"
-                        alt="GitHub Icon"></a></li>
-            <li><a href="https://www.linkedin.com/in/samuel-markson-703a24297/" target="_blank" rel="noopener"
-                    aria-label="LinkedIn"><img src="images/linkedin.svg" width="44" height="44"
-                        alt="LinkedIn Icon"></a></li>
-            <li><a href="https://www.instagram.com/hate_uchihaa/" target="_blank" rel="noopener"
-                    aria-label="instagram"><img src="images/instagram-icon.webp" width="44" height="44"
-                        alt="Instagram Icon"></a></li>
-            </ul>
+            <li>
+                <a href="https://github.com/proffvintage/wdd231" target="_blank" rel="noopener"
+                    aria-label="GitHub profile">
+                    <img src="images/github-mark.svg" width="44" height="44" alt="GitHub Icon">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/samuel-markson-703a24297/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn profile">
+                    <img src="images/linkedin.svg" width="44" height="44" alt="LinkedIn Icon">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/hate_uchihaa/" target="_blank" rel="noopener"
+                    aria-label="Instagram profile">
+                    <img src="images/instagram-icon.webp" width="44" height="44" alt="Instagram Icon">
+                </a>
+            </li>
+        </ul>
         <div class="footer-info">
             <p>&copy; <span id="currentYear"></span> MARKSON SAMUEL</p>
             <span id="lastModified"></span>
         </div>
     </footer>
+
     <script src="scripts/course.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/date.js" defer></script>
-
 
 </body>
 
