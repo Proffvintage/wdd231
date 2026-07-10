@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="12" fill="#c0392b"/>
+  <rect x="25" y="55" width="70" height="40" rx="4" fill="#e74c3c"/>
+  <polygon points="60,20 25,55 95,55" fill="#e74c3c"/>
+  <rect x="45" y="70" width="30" height="25" rx="3" fill="#c0392b"/>
+  <circle cx="60" cy="50" r="6" fill="#f39c12"/>
+  <text x="60" y="110" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#fde3e0" font-weight="bold">RED ROCK REALTY</text>
+</svg>

@@ -1,10 +1,10 @@
 [
   {
     "name": "Summit Coffee Roasters",
-    "address": "123 Main St, Alpine Ridge, UT 84001",
+    "address": "123 Main St, South Jordan, UT 84095",
     "phone": "801-555-1234",
     "website": "https://summitcoffee.com",
-    "image": "summit-logo.png",
+    "image": "summit-logo.svg",
     "membershipLevel": 3,
     "description": "Locally roasted coffee with a mountain vibe. Proud sponsor of community hikes.",
     "established": 2012,
@@ -12,7 +12,7 @@
   },
   {
     "name": "Pioneer Tech Solutions",
-    "address": "456 Innovation Blvd, West Jordan, UT 84088",
+    "address": "456 Innovation Blvd, South Jordan, UT 84095",
     "phone": "801-555-5678",
     "website": "https://pioneertech.io",
     "image": "pioneer-icon.svg",
@@ -26,7 +26,7 @@
     "address": "789 Ledger Ln, South Jordan, UT 84095",
     "phone": "801-555-9012",
     "website": "https://beehivebooks.biz",
-    "image": "beehive-logo.png",
+    "image": "beehive-logo.svg",
     "membershipLevel": 1,
     "description": "Affordable accounting services with a personal touch.",
     "established": 2015,
@@ -34,7 +34,7 @@
   },
   {
     "name": "Wasatch Wellness Center",
-    "address": "321 Harmony Rd, Sandy, UT 84070",
+    "address": "321 Harmony Rd, South Jordan, UT 84095",
     "phone": "801-555-3456",
     "website": "https://wasatchwellness.org",
     "image": "wellness-icon.svg",
@@ -45,7 +45,7 @@
   },
   {
     "name": "Clean Sweep Pros",
-    "address": "654 Tidy Ave, Riverton, UT 84065",
+    "address": "654 Tidy Ave, South Jordan, UT 84095",
     "phone": "801-555-7890",
     "website": "https://cleansweeppros.com",
     "image": "cleansweep-logo.svg",
@@ -56,23 +56,23 @@
   },
   {
     "name": "Zion Outfitters",
-    "address": "987 Trailhead Dr, Springdale, UT 84767",
-    "phone": "435-555-2468",
+    "address": "987 Trailhead Dr, South Jordan, UT 84095",
+    "phone": "801-555-2468",
     "website": "https://zionoutfitters.com",
-    "image": "zion-icon.png",
+    "image": "zion-icon.svg",
     "membershipLevel": 1,
-    "description": "Gear and guided tours for Zion National Park adventurers.",
+    "description": "Gear and guided tours for outdoor adventurers in and around South Jordan.",
     "established": 2008,
     "industry": "Retail & Tourism"
   },
   {
     "name": "Red Rock Realty",
-    "address": "159 Canyon View Rd, St. George, UT 84790",
-    "phone": "435-555-3344",
+    "address": "159 Canyon View Rd, South Jordan, UT 84095",
+    "phone": "801-555-3344",
     "website": "https://redrockrealty.com",
     "image": "redrock-logo.svg",
     "membershipLevel": 2,
-    "description": "Helping families find their dream homes in southern Utah.",
+    "description": "Helping families find their dream homes in the South Jordan area.",
     "established": 2011,
     "industry": "Real Estate"
   }

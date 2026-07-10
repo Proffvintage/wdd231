@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="12" fill="#2a6496"/>
+  <ellipse cx="60" cy="55" rx="28" ry="18" fill="#5bc0eb" opacity="0.6"/>
+  <path d="M35,70 Q60,85 85,70 Q85,95 60,100 Q35,95 35,70Z" fill="#5bc0eb" opacity="0.4"/>
+  <path d="M48,52 L72,52 M52,46 L68,46" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <text x="60" y="112" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#d0eaf8" font-weight="bold">CLEAN SWEEP PROS</text>
+</svg>

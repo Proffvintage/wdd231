@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="12" fill="#8b2500"/>
+  <polygon points="60,15 80,40 70,40 70,80 50,80 50,40 40,40" fill="#ff6b35"/>
+  <rect x="38" y="80" width="44" height="8" rx="3" fill="#ff6b35"/>
+  <path d="M30,100 Q60,85 90,100" fill="none" stroke="#ff9a70" stroke-width="3"/>
+  <text x="60" y="115" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#ffd4b8" font-weight="bold">ZION OUTFITTERS</text>
+</svg>

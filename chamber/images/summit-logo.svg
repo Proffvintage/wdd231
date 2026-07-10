@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="12" fill="#4e3b2b"/>
+  <polygon points="60,20 90,80 30,80" fill="#d4a96a"/>
+  <polygon points="60,30 78,70 42,70" fill="#f5c97e"/>
+  <text x="60" y="100" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#f5e6c8" font-weight="bold">SUMMIT COFFEE</text>
+</svg>

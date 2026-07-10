@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="South Jordan Utah, Chamber of Commerce Home Page">
-    <meta name="author" content="Markson Samuelr">
-    <title>South Jordan Utah, Chamber of Commerce Home Page</title>
-    <meta property="og:title" content="South Jordan Chamber of Commerce">
-    <meta property="og:description" content="South Jordan Utah, Chamber of Commerce Home page. Landing page to know more about the chamber and join.">
-    <meta property="og:url" content="https://proffvintage.github.io/wdd231/chamber/index.html">
+    <meta name="description" content="Join the South Jordan Utah Chamber of Commerce. Learn about membership benefits and submit your application.">
+    <meta name="author" content="Markson Samuel">
+    <title>South Jordan Utah, Chamber of Commerce – Join Page</title>
+    <meta property="og:title" content="Join the South Jordan Chamber of Commerce">
+    <meta property="og:description" content="Become a member of the South Jordan Chamber of Commerce. Choose from Non-Profit, Silver, or Gold membership levels.">
+    <meta property="og:url" content="https://proffvintage.github.io/wdd231/chamber/join.html">
     <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="https://proffvintage.github.io/wdd231/chamber/og-selector-banner.png">
+    <meta property="og:image" content="https://proffvintage.github.io/wdd231/chamber/images/og-selector-banner.webp">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="South Jordan Chamber of Commerce">
     <link rel="icon" href="images/southjordan-chamber-logo.png">
@@ -21,32 +21,30 @@
     <link rel="stylesheet" href="styles/large.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="header-top">
-            <img src="images/southjordan-chamber-logo.png" alt="Site Logo" class="site-logo" fetchpriority="high"/>
+            <img src="images/southjordan-chamber-logo.png" alt="South Jordan Chamber of Commerce logo" class="site-logo" fetchpriority="high"/>
             <span>South Jordan Chamber of Commerce</span>
-
-            <button id="hamburger" aria-label="Toggle navigation">
+            <button id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
                 <span id="hamburger-icon">☰</span>
             </button>
-
-
         </div>
         <nav id="mobile-nav" class="hidden">
             <ul class="navigation">
                 <li class="nav-button"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-button"><a href="join.html" class="nav-link active">Join</a></li>
+                <li class="nav-button"><a href="join.html" class="nav-link">Join</a></li>
                 <li class="nav-button"><a href="directory.html" class="nav-link">Directory</a></li>
                 <li class="nav-button"><a href="discover.html" class="nav-link">Discover</a></li>
-                <!-- <li class="nav-button"><a href="../index.html" class="nav-link">Course Home</a></li> -->
             </ul>
         </nav> 
     </header>
     <main>
-         <section class="join-form">
+        <div class="join-layout">
+        <!-- Join Form -->
+        <section class="join-form">
             <h1>Join the South Jordan Chamber of Commerce</h1>
             <form method="get" action="thankyou.html">
             
@@ -66,7 +64,7 @@
             <label>
                 Organizational Title:
                 <input type="text" name="orgTitle" title="Organizational Title" autocomplete="organization-title" 
-                    pattern="[A-Za-z-\s]{7,}" placeholder="e.g. Marketing Manager">
+                    pattern="[A-Za-z\-\s]{7,}" placeholder="e.g. Marketing Manager">
             </label>
 
             <!-- Email -->
@@ -88,13 +86,12 @@
                 <input type="text" name="organization" title="Organization Name" autocomplete="organization" required>
             </label>
 
-            <!-- Membership Level -->
+            <!-- Membership Level – Non-Profit, Silver, Gold per spec -->
             <label>
                 Membership Level:
                 <select name="membership" title="Membership Level" required>
                 <option value="">Select a level...</option>
                 <option value="np">NP Membership (Non-Profit)</option>
-                <option value="bronze">Bronze Membership-</option>
                 <option value="silver">Silver Membership</option>
                 <option value="gold">Gold Membership</option>
                 </select>
@@ -121,11 +118,6 @@
             <p>Perfect for non-profits, no fee required.</p>
             <a href="#npModal" class="modal-link">Learn More</a>
             </div>
-            <div class="card bronze">
-            <h2>Bronze Membership</h2>
-            <p>Affordable entry-level membership.</p>
-            <a href="#bronzeModal" class="modal-link">Learn More</a>
-            </div>
             <div class="card silver">
             <h2>Silver Membership</h2>
             <p>Enhanced benefits and visibility.</p>
@@ -137,52 +129,46 @@
             <a href="#goldModal" class="modal-link">Learn More</a>
             </div>
         </section>
+        </div>
 
         <!-- Modals -->
-        <div id="npModal" class="modal" role="dialog" aria-modal="true">
+        <div id="npModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="npModal-title">
             <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>NP Membership Benefits</h2>
+            <span class="close" role="button" aria-label="Close Non-Profit modal">&times;</span>
+            <h2 id="npModal-title">NP Membership Benefits</h2>
             <ul>
                 <li>No membership fee</li>
                 <li>Access to community events</li>
                 <li>Networking opportunities</li>
+                <li>Directory listing</li>
             </ul>
             </div>
         </div>
 
-        <div id="bronzeModal" class="modal" role="dialog" aria-modal="true">
+        <div id="silverModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="silverModal-title">
             <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Bronze Membership Benefits</h2>
-            <ul>
-                <li>Discounted event tickets</li>
-                <li>Basic advertising opportunities</li>
-                <li>Training sessions</li>
-            </ul>
-            </div>
-        </div>
-
-        <div id="silverModal" class="modal" role="dialog" aria-modal="true">
-            <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Silver Membership Benefits</h2>
+            <span class="close" role="button" aria-label="Close Silver modal">&times;</span>
+            <h2 id="silverModal-title">Silver Membership Benefits</h2>
             <ul>
                 <li>Spotlight positions on homepage</li>
                 <li>Greater event discounts</li>
                 <li>Exclusive networking events</li>
+                <li>Publication features</li>
+                <li>Social media promotion</li>
             </ul>
             </div>
         </div>
 
-        <div id="goldModal" class="modal" role="dialog" aria-modal="true">
+        <div id="goldModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="goldModal-title">
             <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Gold Membership Benefits</h2>
+            <span class="close" role="button" aria-label="Close Gold modal">&times;</span>
+            <h2 id="goldModal-title">Gold Membership Benefits</h2>
             <ul>
                 <li>Premium advertising</li>
                 <li>Highest event discounts</li>
                 <li>VIP access to chamber events</li>
+                <li>Luncheon sponsorships</li>
+                <li>Top directory placement</li>
             </ul>
             </div>
         </div>
@@ -200,17 +186,17 @@
             <ul class="social-links">
             <li>
                 <a href="https://github.com/proffvintage" target="_blank" rel="noopener">
-                <img src="images/github-mark.svg" alt="GitHub icon">
+                <img src="images/github-mark.svg" alt="GitHub profile">
                 </a>
             </li>
             <li>
-                <a href="https://instagram.com/" target="_blank" rel="noopener" >
-                <img src="images/instagram-icon.webp" alt="Instagram icon" rel="noopener">
+                <a href="https://instagram.com/" target="_blank" rel="noopener">
+                <img src="images/instagram-icon.webp" alt="Instagram profile">
                 </a>
             </li>
             <li>
                 <a href="https://linkedin.com/in/samuel-markson-703a24297" target="_blank" rel="noopener">
-                <img src="images/linkedin.svg" alt="LinkedIn icon" rel="noopener">
+                <img src="images/linkedin.svg" alt="LinkedIn profile">
                 </a>
             </li>
             </ul>
@@ -224,11 +210,7 @@
     </div>
     </footer>
     <script src="scripts/navigation.js" defer></script>
-    <script src="scripts/main.js" defer></script>
     <script src="scripts/date.js" defer></script>
-    <script src="scripts/weather.js" defer></script>
-    <script src="scripts/home-spotlight.js" defer></script>
-    <script src="scripts/events.js" defer></script>
     <script src="scripts/join.js" defer></script>
 </body>
 </html>

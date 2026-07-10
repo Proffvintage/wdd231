@@ -1,3 +1,8 @@
+/* Global Box Model – prevents horizontal overflow */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* Typography */
 .roboto {
   font-family: "Roboto", sans-serif;
@@ -12,9 +17,9 @@ main h1 {
   color: #333;
 }
 
-/* Header */
+/* Header – #005f73 on white text passes WCAG AA contrast (5.7:1) */
 header {
-  background-color: #8fe2ed;
+  background-color: #005f73;
   padding: 0.5rem;
   color: white;
 }
@@ -65,7 +70,7 @@ ul.navigation {
 }
 
 .nav-link.active {
-  background-color: #009eb6;
+  background-color: #003d4d;
   color: #fff;
   font-weight: bold;
   border-radius: 5px;
@@ -236,13 +241,71 @@ h2 {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 .company-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
   border-bottom: 1px solid #ccc;
-  padding: 1rem 0;
+  padding: 0.85rem 1rem;
   font-size: 0.95rem;
   line-height: 1.5;
+}
+
+.company-list-item strong {
+  font-size: 1.05rem;
+  color: #003d4d;
+}
+
+.company-list-item .list-detail {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.company-list-item a {
+  color: #0077b6;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.company-list-item a:hover {
+  text-decoration: underline;
+}
+
+/* Membership Badges */
+.badge, .list-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-gold {
+  background-color: #c9a227;
+  color: #fff;
+}
+
+.badge-silver {
+  background-color: #7a7a7a;
+  color: #fff;
+}
+
+.badge-member {
+  background-color: #0077b6;
+  color: #fff;
+}
+
+/* Error message */
+.error-msg {
+  text-align: center;
+  color: #c62828;
+  padding: 2rem;
+  font-size: 1rem;
 }
 
 /* Footer */
@@ -413,8 +476,9 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Join page side-by-side layout – scoped to .join-layout wrapper only */
 @media (min-width: 900px) {
-  main {
+  .join-layout {
     display: flex;
     flex-direction: row;
     gap: 2rem;
@@ -422,11 +486,11 @@ footer {
     justify-content: center;
   }
 
-  .join-form {
+  .join-layout .join-form {
     flex: 2;
   }
 
-  .membership-cards {
+  .join-layout .membership-cards {
     flex: 1;
     max-width: 400px;
   }

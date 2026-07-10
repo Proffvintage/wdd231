@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="12" fill="#1a6b4a"/>
+  <circle cx="60" cy="48" r="20" fill="#a8e6c8"/>
+  <path d="M40,68 Q60,90 80,68" fill="#a8e6c8"/>
+  <line x1="60" y1="28" x2="60" y2="20" stroke="#a8e6c8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="60" y1="20" x2="52" y2="14" stroke="#a8e6c8" stroke-width="2" stroke-linecap="round"/>
+  <line x1="60" y1="20" x2="68" y2="14" stroke="#a8e6c8" stroke-width="2" stroke-linecap="round"/>
+  <text x="60" y="105" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#d4f5e5" font-weight="bold">WASATCH WELLNESS</text>
+</svg>

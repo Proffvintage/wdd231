@@ -12,7 +12,7 @@
   <meta property="og:description" content="South Jordan Utah, Chamber of Commerce directory page">
   <meta property="og:url" content="https://proffvintage.github.io/wdd231/chamber/directory.html">
   <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://proffvintage.github.io/wdd231/chamber/og-selector-banner.png">
+  <meta property="og:image" content="https://proffvintage.github.io/wdd231/chamber/images/og-selector-banner.webp">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="South Jordan Chamber of Commerce">
 
@@ -36,7 +36,7 @@
     <div class="header-top">
       <img src="images/southjordan-chamber-logo.png" alt="Site Logo" class="site-logo" fetchpriority="high"/>
       <span>South Jordan Chamber of Commerce</span>
-      <button id="hamburger" aria-label="Toggle navigation">
+      <button id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
         <span id="hamburger-icon">☰</span>
       </button>
     </div>
@@ -44,23 +44,22 @@
       <ul class="navigation">
         <li class="nav-button"><a href="index.html" class="nav-link">Home</a></li>
         <li class="nav-button"><a href="join.html" class="nav-link">Join</a></li>
-        <li class="nav-button"><a href="directory.html" class="nav-link active">Directory</a></li>
+        <li class="nav-button"><a href="directory.html" class="nav-link">Directory</a></li>
         <li class="nav-button"><a href="discover.html" class="nav-link">Discover</a></li>
-        <!-- <li class="nav-button"><a href="../index.html" class="nav-link">Course Home</a></li> -->
       </ul>
     </nav> 
   </header>
 
   <main>
-    <h1>Chamber Directory</h1>
+    <h1>Chamber Member Directory</h1>
 
-    <div class="view-toggle">
-      <button id="gridView">Grid View</button>
-      <button id="listView">List View</button>
+    <div class="view-toggle" role="group" aria-label="Display view toggle">
+      <button id="gridView" class="active" aria-pressed="true" aria-label="Grid view">&#9783; Grid View</button>
+      <button id="listView" aria-pressed="false" aria-label="List view">&#9776; List View</button>
     </div>
 
     <!-- Cards container for directory entries -->
-    <section id="company-cards" class="cards-container"></section>
+    <section id="company-cards" class="cards-container grid-view" aria-label="Chamber member directory"></section>
   </main>
 
   <footer>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="12" fill="#f9f4e3"/>
+  <polygon points="60,18 75,45 105,45 82,63 91,90 60,73 29,90 38,63 15,45 45,45" fill="#f5c518" stroke="#d4a800" stroke-width="2"/>
+  <text x="60" y="110" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#5a4000" font-weight="bold">BEEHIVE BOOKS</text>
+</svg>

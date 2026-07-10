@@ -1,18 +1,21 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // Set current year
+document.addEventListener("DOMContentLoaded", function () {
+  // Set current copyright year
   const currentYearSpan = document.getElementById("currentYear");
-  const currentYear = new Date().getFullYear();
-  currentYearSpan.textContent = currentYear;
+  if (currentYearSpan) {
+    currentYearSpan.textContent = new Date().getFullYear();
+  }
 
-  // Set last modified date
+  // Set last modified date (HTML already has "Last Updated:" label)
   const lastModifiedSpan = document.getElementById("lastModified");
-  const lastModified = new Date(document.lastModified);
-  const options = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
-  };
-  lastModifiedSpan.textContent = `Last Modified: ${lastModified.toLocaleString(undefined, options)}`;
+  if (lastModifiedSpan) {
+    const lastModified = new Date(document.lastModified);
+    const options = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    };
+    lastModifiedSpan.textContent = lastModified.toLocaleString(undefined, options);
+  }
 });
