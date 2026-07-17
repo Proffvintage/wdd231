@@ -91,4 +91,41 @@
     flex-direction: row;
   }
 
+  /* === DESKTOP HOME PAGE LAYOUTS === */
+  .main-content-grid {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2rem;
+  }
+
+  .weather-grid {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .weather-current {
+    flex: 1;
+    border-bottom: none;
+    border-right: 1px solid #eee;
+    padding-bottom: 0;
+    padding-right: 1.5rem;
+  }
+
+  .weather-forecast {
+    flex: 1.2;
+    padding-top: 0;
+  }
+
+  #forecast-container {
+    gap: 0.5rem;
+  }
+
+  #spotlight .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
 }

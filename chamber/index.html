@@ -44,33 +44,47 @@
             </ul>
         </nav> 
     </header>
-    <main>
+    <main class="home-main">
         <div class="hero">
+            <picture>
+                <source media="(max-width: 600px)" srcset="images/hero-1-resized.webp">
+                <source media="(min-width: 601px)" srcset="images/hero-1.webp">
+                <img src="images/hero-1.webp" alt="Beautiful panoramic view of South Jordan city skyline" class="hero-image" fetchpriority="high">
+            </picture>
             <div class="hero-content">
-                <h1>Welcome to the  Wholesome South Jordan Chamber of Commerce Home Page</h1>
-                <button id="join-button" class="hero-button">Join Now</button>
+                <h1>Welcome to South Jordan Chamber of Commerce</h1>
+                <a href="join.html" class="hero-button">Join the Chamber</a>
             </div>
         </div>
 
-        <section id="weather">
-            <h2>Current Weather.</h2>
-                <div class="cards-container">
-                    <section class="card">
-                    <p id="current-temp"></p>
-                    <figure>
-                        <img id="weather-icon" alt="Weather icon" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
-                        <figcaption id="figcaption"></figcaption>
-                    </figure>
-                    </section>
+        <div class="main-content-grid">
+            <section id="weather" class="card">
+                <h2>Weather in South Jordan</h2>
+                <div class="weather-grid">
+                    <div class="weather-current">
+                        <h3>Current Conditions</h3>
+                        <p id="current-temp"></p>
+                        <figure>
+                            <img id="weather-icon" alt="Weather icon" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
+                            <figcaption id="figcaption"></figcaption>
+                        </figure>
+                    </div>
+                    <div class="weather-forecast">
+                        <h3>3-Day Forecast</h3>
+                        <div id="forecast-container">
+                            <!-- JS will inject daily forecasts here -->
+                        </div>
+                    </div>
                 </div>
-        </section>
+            </section>
 
-        <section id="current-events">
-            <h2>Upcoming Events in South Jordan</h2>
-            <div class="cards-container">
-                <!-- JS will inject multiple <section class="card">...</section> here -->
-            </div>
-        </section>
+            <section id="current-events" class="card">
+                <h2>Upcoming Events</h2>
+                <div class="cards-container">
+                    <!-- JS will inject event cards here -->
+                </div>
+            </section>
+        </div>
 
         <section id="spotlight">
             <h2>Member Spotlights</h2>
@@ -78,9 +92,7 @@
                 <!-- JS will inject multiple <section class="card">...</section> here -->
             </div>
         </section>
-
-        
-    </main>
+    </main>      
     <footer>
     <div class="footer-container">
         <div class="footer-column">

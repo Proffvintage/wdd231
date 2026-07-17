@@ -1,48 +1,51 @@
-
 async function loadSpotlightMembers() {
     const spotlightContainer = document.querySelector('#spotlight .cards-container');
+    if (!spotlightContainer) return;
 
     try {
         const response = await fetch('data/members.json');
+        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
         const data = await response.json();
 
-        // filter for gold and silver members
+        // Filter for gold and silver members
         const qualified = data.filter(member =>
-        member.membershipLevel >= 2 // 2 = Silver, 3 = Gold
+            member.membershipLevel === 2 || member.membershipLevel === 3 // 2 = Silver, 3 = Gold
         );
 
-
-        //shuffle and select 3 random members
+        // Randomly choose to display either 2 or 3 members
+        const count = Math.floor(Math.random() * 2) + 2; // returns 2 or 3
         const spotlight = qualified
             .sort(() => 0.5 - Math.random())
-            .slice(0,3);
+            .slice(0, count);
 
-        //Render spotlight cards
+        // Render spotlight cards
+        spotlightContainer.innerHTML = '';
         spotlight.forEach(member => {
             const card = document.createElement('section');
+            card.classList.add('card');
             card.classList.add('spotlight-card');
+
+            const levelClass = member.membershipLevel === 3 ? 'badge-gold' : 'badge-silver';
+            const levelName = member.membershipLevel === 3 ? 'Gold' : 'Silver';
+
             card.innerHTML = `
+                <img src="images/${member.image}" alt="${member.name} Logo" class="spotlight-logo" loading="lazy">
                 <h3>${member.name}</h3>
-                <p>${getMembershipLevel(member.membershipLevel)} Member</p>
-                <p>${member.address}</p>
-                <p>${member.phone}</p>
-                <a href="${member.website}" target="_blank">Visit Website</a>
+                <div class="spotlight-badge-wrapper">
+                    <span class="badge ${levelClass}">${levelName} Member</span>
+                </div>
+                <p class="spotlight-detail"><strong>Phone:</strong> ${member.phone}</p>
+                <p class="spotlight-detail"><strong>Address:</strong> ${member.address}</p>
+                <div class="spotlight-link-wrapper">
+                    <a href="${member.website}" target="_blank" rel="noopener">Visit Website</a>
+                </div>
             `;
             spotlightContainer.appendChild(card);
         });
     } catch (error) {
         console.error('Error loading spotlight members:', error);
-        spotlightContainer.innerHTML = `<p>Unable to load spotlight members at this time.</p>`;    
+        spotlightContainer.innerHTML = `<p class="error-msg">Unable to load spotlight members at this time.</p>`;
     }
-}
-
-function getMembershipLevel(level) {
-  switch (level) {
-    case 1: return 'Member';
-    case 2: return 'Silver';
-    case 3: return 'Gold';
-    default: return 'Unknown';
-  }
 }
 
 loadSpotlightMembers();
