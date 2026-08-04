@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Oquirrh Mountain Utah Temple",
+    "address": "11022 S 4000 W, South Jordan, UT 84095",
+    "description": "A striking landmark of South Jordan, offering panoramic views and spiritual significance.",
+    "image": "images/oquirrh-mountain-temple.webp",
+    "alt": "White granite temple with a tall golden-tipped spire lit at dusk, framed by autumn trees and ornamental grasses with mountains behind",
+    "width": 600,
+    "height": 600
+  },
+  {
+    "name": "Daybreak Community",
+    "address": "11274 S Lake Ave, South Jordan, UT 84095",
+    "description": "A vibrant planned community with trails, shops, and a picturesque lake.",
+    "image": "images/daybreak-community.webp",
+    "alt": "Glass entrance of the Daybreak Community Association building at sunset, with a tree emblem on the hanging sign",
+    "width": 1280,
+    "height": 854
+  },
+  {
+    "name": "South Jordan City Park",
+    "address": "11000 S Redwood Rd, South Jordan, UT 84095",
+    "description": "A large park with playgrounds, sports fields, and picnic areas for families.",
+    "image": "images/south-jordan-city-park.webp",
+    "alt": "Open-air pavilion with a green metal roof on brick pillars, sheltering rows of picnic tables beside a sports field",
+    "width": 570,
+    "height": 320
+  },
+  {
+    "name": "The District Shopping Center",
+    "address": "3761 W Parkway Plaza Dr, South Jordan, UT 84095",
+    "description": "A bustling shopping and entertainment hub with restaurants, theaters, and retail stores.",
+    "image": "images/district.webp",
+    "alt": "Main street of an open-air shopping center lined with storefronts, with a landscaped roundabout and fountain in the foreground",
+    "width": 1024,
+    "height": 614
+  },
+  {
+    "name": "Jordan River Parkway Trail",
+    "address": "Runs along Jordan River, South Jordan, UT",
+    "description": "A scenic trail for walking, biking, and connecting with nature.",
+    "image": "images/parkway-trail.webp",
+    "alt": "Wooden boardwalk with railings curving through leafy willow trees in evening sunlight",
+    "width": 626,
+    "height": 470
+  },
+  {
+    "name": "Heritage Park",
+    "address": "10996 S Redwood Rd, South Jordan, UT 84095",
+    "description": "A historic site celebrating South Jordan's pioneer heritage.",
+    "image": "images/heritage-park.webp",
+    "alt": "Children playing in a splash pad beneath a wooden water-tower fountain, with shade pavilions and mountains behind",
+    "width": 768,
+    "height": 576
+  },
+  {
+    "name": "South Jordan Library",
+    "address": "10673 S Redwood Rd, South Jordan, UT 84095",
+    "description": "A modern library offering books, events, and community programs.",
+    "image": "images/south-jordan-library.webp",
+    "alt": "Brick and glass library building with a curved metal roof and a County Library sign above the entrance",
+    "width": 474,
+    "height": 355
+  },
+  {
+    "name": "East Riverfront Park",
+    "address": "10991 S River Front Pkwy, South Jordan, UT 84095",
+    "description": "A riverside park with trails, fishing spots, and picnic areas.",
+    "image": "images/east-riverfront-park.webp",
+    "alt": "Aerial view of a large playground with blue rubber surfacing and wooden climbing structures beside the Jordan River",
+    "width": 600,
+    "height": 450
+  }
+]
