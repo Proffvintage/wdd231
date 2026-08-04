@@ -4,68 +4,165 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Markson Samuel">
-  <meta name="Description" content="Site plan for Clean Sweep website">
-  <title>Site Plan</title>
-  <link rel="stylesheet" href="styles/siteplan.css">
+  <meta name="description" content="Website site plan for UCHIHA CAR CARE, a mobile car detailing service: site name, purpose, scenarios, color scheme, typography, and wireframes.">
+  <title>Site Plan | UCHIHA CAR CARE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="styles/siteplan.css">
 </head>
+
 <body>
   <header>
-    <h1>Site Plan</h1>
+    <p class="brandmark">UCHIHA CAR CARE</p>
+    <h1>Website Site Plan</h1>
   </header>
 
-  <section>
-    <h2>Site Name</h2>
-    <p>Clean Sweep</p>
-    <p>This name represents a feeling of cleanliness for my cleaning website. its also a relatively known phrase.</p>
-  </section>
+  <main>
+    <section id="site-name">
+      <h2>Site Name</h2>
+      <p class="lead">UCHIHA CAR CARE</p>
+      <p>
+        The name pairs a distinctive family name with a plain description of the work, so it reads as a
+        small, owner-operated business rather than a franchise. &ldquo;Car Care&rdquo; keeps the service
+        obvious at a glance for people searching locally, while &ldquo;Uchiha&rdquo; is short, memorable,
+        and easy to say aloud &mdash; useful for word-of-mouth referrals, which are the main way detailing
+        shops grow.
+      </p>
+      <p class="aside">
+        Representative domain: <span class="domain">uchihacarcare.com</span>
+      </p>
+    </section>
 
-  <section>
-    <h2>Site Purpose</h2>
-    <p>Clean Sweep is a cleaning service website designed to support 
-        a future small business by providing a user-friendly platform 
-        for potential customers. The site will showcase before-and-after 
-        galleries, introduce the company and its team, and offer transparent 
-        pricing for various services including home, room, garage, and move-in/move-out 
-        cleanings. It will also feature a quote calculator to help users estimate costs 
-        and a community-driven blog where people can share cleaning tips and tricks. 
-        This project serves as a practical foundation for launching a real-world cleaning business, 
-        inspired by a family member’s entrepreneurial goals.
-    </p>
-  </section>
+    <section id="site-purpose">
+      <h2>Site Purpose</h2>
+      <p>
+        UCHIHA CAR CARE is a car detailing service website built to give a small, growing business a
+        credible online presence and a way to turn visitors into booked jobs. The site presents a
+        before-and-after gallery of completed details, introduces the owner and the company&rsquo;s
+        approach, and publishes transparent pricing for its service tiers &mdash; interior detail,
+        exterior detail, full detail, and engine bay cleaning. A quote calculator lets visitors estimate
+        the cost of a job by vehicle size and service level before they commit, and a tips-and-tricks blog
+        shares practical car care advice so the site stays useful to owners between appointments. A contact
+        form handles booking requests and questions.
+      </p>
+    </section>
 
-  <section>
-    <h2>Scenarios</h2>
-    <ul>
-      <li>Scenario 1 - I wonder how much it would cost to hire a professional cleaner when we move next month?</li>
-      <li>Scenario 2 - It would be awesome if we could hire a company to clean up after the wedding reception. There is just to much to do.</li>
-    </ul>
-  </section>
+    <section id="scenarios">
+      <h2>Scenarios</h2>
+      <p>
+        These are the questions a typical visitor arrives with. Each one drives content on a specific page.
+      </p>
+      <ol class="scenarios">
+        <li>
+          <p class="question">How much does a full interior and exterior detail cost for a mid-size SUV?</p>
+          <p class="answers-on">Answered by: Services &amp; Pricing, Quote Calculator</p>
+        </li>
+        <li>
+          <p class="question">Do you come to my house, or do I need to drop the car off somewhere?</p>
+          <p class="answers-on">Answered by: About Us, Contact</p>
+        </li>
+        <li>
+          <p class="question">What does a detail actually look like when it&rsquo;s finished &mdash; can I see real results?</p>
+          <p class="answers-on">Answered by: Gallery</p>
+        </li>
+        <li>
+          <p class="question">How do I get salt stains and pet hair out of my carpets myself?</p>
+          <p class="answers-on">Answered by: Tips &amp; Tricks Blog</p>
+        </li>
+      </ol>
+    </section>
 
-  <section>
-    <h2>Color Schema</h2>
-    <ul>
-        <li>#0D1321	Rich Black	Background, header/footer, nav bar</li>
-        <li>#6197D9	Blue Gray	Primary accent (buttons, links, icons)</li>
-        <li>#B0CBEC	Powder Blue	Secondary accent (hover states, cards)</li>
-        <li>#FFFFFF	White	Text backgrounds, body text, spacing</li>
-    </ul>
-  </section>
+    <section id="color-scheme">
+      <h2>Color Scheme</h2>
+      <p>
+        Four colors carry the whole site. This planning document is styled with these colors exclusively,
+        so the page doubles as a live sample of the palette.
+      </p>
+      <table class="palette">
+        <caption>Palette and where each color is applied</caption>
+        <thead>
+          <tr>
+            <th scope="col">Swatch</th>
+            <th scope="col">Hex</th>
+            <th scope="col">Name</th>
+            <th scope="col">Where it is used</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="swatch swatch-black"></span></td>
+            <td><code>#0D1321</code></td>
+            <td>Rich Black</td>
+            <td>Header and footer backgrounds, nav bar, all body and heading text</td>
+          </tr>
+          <tr>
+            <td><span class="swatch swatch-blue"></span></td>
+            <td><code>#6197D9</code></td>
+            <td>Blue Gray</td>
+            <td>Primary accent: button backgrounds, link underlines, section rules, icons</td>
+          </tr>
+          <tr>
+            <td><span class="swatch swatch-powder"></span></td>
+            <td><code>#B0CBEC</code></td>
+            <td>Powder Blue</td>
+            <td>Secondary accent: card and table-row backgrounds, hover states, pull quotes</td>
+          </tr>
+          <tr>
+            <td><span class="swatch swatch-white"></span></td>
+            <td><code>#FFFFFF</code></td>
+            <td>White</td>
+            <td>Page background, content surfaces, text on the dark header and footer</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="aside">
+        Contrast check: Rich Black on White is 18.5:1 and Rich Black on Powder Blue is 11.1:1, both well
+        past the WCAG AA minimum of 4.5:1. Blue Gray is reserved for backgrounds, rules, and underlines
+        rather than small text, because Blue Gray on White measures only 3.0:1.
+      </p>
+    </section>
 
-  <section>
-    <h2>Typography</h2>
-    <p>Alan-Sans for my main text type with sans-serif as a secondary font</p>
-  </section>
+    <section id="typography">
+      <h2>Typography</h2>
+      <p>Two typefaces, both served from Google Fonts.</p>
+      <dl class="typography">
+        <dt class="specimen-heading">Alan Sans</dt>
+        <dd>
+          Used for all headings, the logo wordmark, the navigation bar, and button labels. Its wider
+          letterforms and heavier available weights give headings enough presence to anchor a page without
+          needing a display face.
+        </dd>
+        <dt class="specimen-body">Roboto</dt>
+        <dd>
+          Used for body copy, lists, table content, form labels, captions, and footer text. It stays
+          readable at small sizes on phones, which is where most visitors will read pricing and blog posts.
+        </dd>
+      </dl>
+      <p class="aside">
+        A generic <code>sans-serif</code> is declared last in every font stack as a fallback. It is a
+        fallback, not a third typeface choice.
+      </p>
+    </section>
 
-  <section>
-    <h2>Wireframe</h2>
-    <img src="images/wireframe_sketch_clean_sweep.webp" alt="wireframe sketch of clean sweep website">
-  </section>
+    <section id="wireframe">
+      <h2>Wireframe</h2>
+      <p>
+        Black-and-white layout sketch of the home page at a small (mobile) viewport and a large
+        (desktop) viewport, showing structure and content order before any color or imagery is applied.
+        Section heights are annotated in pixels beside each block.
+      </p>
+      <figure>
+        <img src="images/wireframe_uchiha_car_care.png"
+             alt="Home page wireframe with pixel dimensions annotated beside each section. Small viewport at 375 pixels wide on the left: a header with the logo and a hamburger button; a hero image placeholder holding the heading Welcome to UCHIHA CAR CARE and a Get Started button; three stacked service buttons for Interior Detail, Exterior Detail and Full Detail; four stacked feature cards titled See Our Work, Why Choose UCHIHA CAR CARE, Tips and Tricks for DIY and Quote Calculator; a Contact Us form with First Name, Last Name, Email and Mobile Phone fields above a Talk to a Specialist button; and a footer with navigation links, the date, a copyright line and four social media icons. Large viewport at 1200 pixels wide on the right: the same content rearranged, with the logo beside a horizontal navigation bar, a full-width hero, the three service buttons in one row, the four feature cards in a single row, a centered Contact Us form capped at 500 pixels, and a footer with centered navigation and four social icons."
+             width="1177" height="678">
+        <figcaption>Home page wireframe &mdash; small viewport (left) and large viewport (right).</figcaption>
+      </figure>
+    </section>
+  </main>
+
   <footer>
-    <p>&copy; 2025 Bryton Palmer</p>
+    <p>&copy; 2026 Markson Samuel &middot; UCHIHA CAR CARE &middot; WDD 231</p>
   </footer>
 </body>
 </html>

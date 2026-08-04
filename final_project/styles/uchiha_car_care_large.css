@@ -22,7 +22,7 @@
   }
 
   .feature_card {
-    width: 350px;
+    max-width: 350px;
   }
 
   .about_us_content {
@@ -58,7 +58,7 @@
 /* Large screens and up (desktops, wide monitors) */
 @media (min-width: 1200px) {
   .feature_card {
-    width: 400px;
+    max-width: 400px;
   }
 
   .hero_overlay h1 {
@@ -90,7 +90,9 @@
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  .nav_menu_items {
+  /* Scoped to the header nav only — the footer nav shares this class
+     and must stay visible on small screens. */
+  #mobile-nav.nav_menu_items {
     display: none;
     position: absolute;
     top: 70px;
@@ -101,17 +103,21 @@
     z-index: 1000;
   }
 
-  .nav_menu_items ul {
+  #mobile-nav.nav_menu_items ul {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
   }
 
-  .nav_menu_items.show {
+  #mobile-nav.nav_menu_items.show {
     display: block;
   }
 
-
+  footer .nav_menu_items ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 }
 /* ham menu */
 @media (min-width: 769px) {

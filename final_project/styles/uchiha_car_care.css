@@ -8,10 +8,29 @@
 
 }
 /* font */
+:root {
+  --font-heading: "Alan Sans", sans-serif;
+  --font-body: "Roboto", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
 .alan-sans {
   --alan-weight: 400;
-  font-family: "Alan Sans", sans-serif;
-  
+  font-family: var(--font-heading);
   font-weight: var(--alan-weight);
   font-style: normal;
 }
@@ -138,9 +157,11 @@ section.intro h1 {
 
 #home_quick_buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 3rem;
+  gap: 1rem;
   margin: 2rem 0;
+  padding: 0 1rem;
 }
 #home_quick_buttons .quick_btn {
   background-color: var(--link-color);
@@ -158,6 +179,7 @@ section.intro h1 {
 
 .feature_links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
@@ -175,7 +197,8 @@ section.intro h1 {
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
-  width: 300px;
+  flex: 1 1 260px;
+  max-width: 300px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .feature_card img {
@@ -228,13 +251,13 @@ footer a:hover {
     width: 44px;
 }
 /* gallery */
-.clean_sweep_gallery {
+.uchiha-car-care-gallery {
   padding: 2rem;
   background-color: var(--accent-color1);
   color: var(--text-color);
 }
 
-.clean_sweep_gallery h2 {
+.uchiha-car-care-gallery h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -292,7 +315,7 @@ main h1 {
 
 .about_us_text {
   flex: 1 1 400px;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-body);
   color: var(--text-color);
 }
 
@@ -456,15 +479,17 @@ button:hover {
 /* experiment */
 .services-columns {
   display: flex;
+  flex-wrap: wrap;        /* stack the columns on narrow screens */
   gap: 2rem;              /* space between columns */
   justify-content: center; /* center them horizontally */
   align-items: flex-start; /* align tops */
   max-width: 1000px;
   margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 .pricing, .calculator {
-  flex: 1;                /* each takes equal width */
+  flex: 1 1 280px;        /* grow, but wrap below 280px */
   display: flex;
   flex-direction: column; /* stack content inside */
 }
@@ -592,7 +617,7 @@ button:hover {
   background: #f9f9f9;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-body);
 }
 
 /* Heading and description */

@@ -22,7 +22,7 @@ function initReviews() {
   reviewSection.appendChild(reviewList);
 
   // Load saved reviews
-  const savedReviews = JSON.parse(localStorage.getItem('cleanSweepReviews')) || [];
+  const savedReviews = JSON.parse(localStorage.getItem('uchihaCarCareReviews')) || [];
   savedReviews.forEach(review => {
     reviewList.insertAdjacentHTML('afterbegin', createReviewHTML(review));
   });
@@ -39,7 +39,7 @@ function initReviews() {
     reviewList.insertAdjacentHTML('afterbegin', createReviewHTML(newReview));
 
     savedReviews.push(newReview);
-    localStorage.setItem('cleanSweepReviews', JSON.stringify(savedReviews));
+    localStorage.setItem('uchihaCarCareReviews', JSON.stringify(savedReviews));
 
     form.reset();
   });

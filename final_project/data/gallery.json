@@ -1,8 +1,8 @@
 [
   {
     "src": "images/gallery1.webp",
-    "alt": "A worker cleaning a car",
-    "caption": "A worker cleaning a car"
+    "alt": "A detailer washing the exterior of a car",
+    "caption": "Exterior Wash in Progress"
   },
   {
     "src": "images/gallery2.webp",
@@ -11,13 +11,13 @@
   },
   {
     "src": "images/gallery3.webp",
-    "alt": " A Freshly vacuumed car interior",
-    "caption": " A Freshly vacuumed car interior"
+    "alt": "A freshly vacuumed car interior",
+    "caption": "Freshly Vacuumed Interior"
   },
   {
     "src": "images/gallery4.webp",
-    "alt": "An almost cleaned car",
-    "caption": "An Almost Cleaned Car"
+    "alt": "A car midway through a full detail",
+    "caption": "Mid-Detail Progress"
   },
   {
     "src": "images/gallery5.webp",
@@ -31,8 +31,8 @@
   },
   {
     "src": "images/gallery7.webp",
-    "alt": "Thoroughly cleaning of a dashboard",
-    "caption": "Thoroughly Cleaning of a Dashboard"
+    "alt": "Thorough cleaning of a dashboard",
+    "caption": "Thorough Dashboard Detailing"
   },
   {
     "src": "images/gallery8.webp",

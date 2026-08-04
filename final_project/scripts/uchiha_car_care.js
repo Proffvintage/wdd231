@@ -2,18 +2,18 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Service Pricing Array
   const services = [
-    { name: "Interior Cleaning", value: "basic", rate: 75 },
-    { name: "Exterior Cleaning", value: "deep", rate: 100 },
-    { name: "Long Distance Cleaning", value: "move", rate: 350 },
-    { name: "Full car Cleaning", value: "garage", rate: 150 }
-    
+    { name: "Interior Detail", value: "interior", rate: 75 },
+    { name: "Exterior Detail", value: "exterior", rate: 100 },
+    { name: "Full Detail", value: "full", rate: 150 },
+    { name: "Ceramic Coating", value: "ceramic", rate: 350 }
+
   ];
 const pricingList = document.querySelector('#pricing_list ul');
 if (pricingList) {
   pricingList.innerHTML = ''; // Clear any existing content
   services.forEach(service => {
     const li = document.createElement('li');
-    li.innerHTML = `<strong>${service.name}:</strong> $${service.rate} per visit`;
+    li.innerHTML = `<strong>${service.name}:</strong> $${service.rate} per car`;
     pricingList.appendChild(li);
   });
 }

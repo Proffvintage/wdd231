@@ -1,71 +1,311 @@
+/* UCHIHA CAR CARE — Site Plan stylesheet
+   Palette and typography are exactly what the plan document declares:
+   #0D1321 Rich Black · #6197D9 Blue Gray · #B0CBEC Powder Blue · #FFFFFF White
+   Alan Sans (headings/UI) · Roboto (body) */
 
-.alan-sans {
-  --alan-weight: 400;
-  font-family: "Alan Sans", sans-serif;
-  font-weight: var(--alan-weight);
-  font-style: normal;
+:root {
+  --rich-black: #0D1321;
+  --blue-gray: #6197D9;
+  --powder-blue: #B0CBEC;
+  --white: #FFFFFF;
+
+  --font-heading: "Alan Sans", sans-serif;
+  --font-body: "Roboto", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color: var(--rich-black);
+  background-color: var(--white);
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Alata', sans-serif;
-  background-color: #FFFFFF;
-  color: #0D1321;
+  font-family: var(--font-body);
+  font-size: 1rem;
   line-height: 1.6;
+  color: var(--rich-black);
+  background-color: var(--white);
 }
+
+/* ---------- Header ---------- */
 
 header {
-  background-color: #6197D9;
-  color: #FFFFFF;
-  padding: 1rem;
+  background-color: var(--rich-black);
+  color: var(--white);
+  padding: 1.5rem 1rem;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-  color: #0D1321;
+.brandmark {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--powder-blue);
+  margin: 0 0 0.35rem;
 }
 
-section {
-  padding: 1.5rem;
-  border-bottom: 1px solid #B0CBEC;
+header h1 {
+  color: var(--white);
+  margin: 0;
+  font-size: 1.75rem;
 }
 
-ul {
-  list-style-type: disc;
-  padding-left: 2rem;
+/* ---------- Typographic base ---------- */
+
+h1,
+h2,
+dt {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
 }
 
-li {
-  margin-bottom: 0.5rem;
+h2 {
+  color: var(--rich-black);
+  font-size: 1.35rem;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--blue-gray);
 }
 
 p {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
 }
+
+code {
+  font-family: ui-monospace, "Courier New", monospace;
+  background-color: var(--powder-blue);
+  color: var(--rich-black);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* ---------- Layout ---------- */
+
+main {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+.lead {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.aside {
+  background-color: var(--powder-blue);
+  border-left: 4px solid var(--blue-gray);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.domain {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* ---------- Scenarios ---------- */
+
+.scenarios {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.scenarios li {
+  background-color: var(--powder-blue);
+  border-left: 4px solid var(--blue-gray);
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.scenarios li:last-child {
+  margin-bottom: 0;
+}
+
+.question {
+  font-weight: 500;
+  margin: 0 0 0.3rem;
+}
+
+.answers-on {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ---------- Color scheme table ---------- */
+
+.palette {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.palette caption {
+  text-align: left;
+  font-style: italic;
+  padding-bottom: 0.5rem;
+}
+
+.palette th,
+.palette td {
+  text-align: left;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--blue-gray);
+  vertical-align: middle;
+}
+
+.palette thead th {
+  font-family: var(--font-heading);
+  background-color: var(--rich-black);
+  color: var(--white);
+  border-bottom: none;
+}
+
+.palette tbody tr:nth-child(even) {
+  background-color: var(--powder-blue);
+}
+
+.swatch {
+  display: inline-block;
+  width: 2.25rem;
+  height: 1.5rem;
+  border: 1px solid var(--rich-black);
+  vertical-align: middle;
+}
+
+.swatch-black {
+  background-color: var(--rich-black);
+}
+
+.swatch-blue {
+  background-color: var(--blue-gray);
+}
+
+.swatch-powder {
+  background-color: var(--powder-blue);
+}
+
+.swatch-white {
+  background-color: var(--white);
+}
+
+/* ---------- Typography section ---------- */
+
+.typography {
+  margin: 0 0 1.25rem;
+}
+
+.typography dt {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  padding-bottom: 0.25rem;
+}
+
+.typography dt:first-child {
+  margin-top: 0;
+}
+
+.typography dd {
+  margin: 0.35rem 0 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--blue-gray);
+}
+
+.specimen-heading {
+  font-family: var(--font-heading);
+}
+
+.specimen-body {
+  font-family: var(--font-body);
+}
+
+/* ---------- Wireframe ---------- */
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--rich-black);
+}
+
+figcaption {
+  font-size: 0.9rem;
+  font-style: italic;
+  padding-top: 0.5rem;
+}
+
+/* ---------- Footer ---------- */
 
 footer {
-  background-color: #6197D9;
-  color: #0D1321;
+  background-color: var(--rich-black);
+  color: var(--white);
   text-align: center;
-  padding: 1rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  padding: 1.25rem 1rem;
 }
 
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
 
-@media (max-width: 600px) {
-  section {
-    padding: 1rem;
+/* ---------- Larger viewports ---------- */
+
+@media (min-width: 40rem) {
+  header {
+    padding: 2.25rem 2rem;
   }
 
-  h1 {
-    font-size: 1.8rem;
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .brandmark {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 2.5rem 2rem 3.5rem;
   }
 
   h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+  }
+
+  section {
+    margin-bottom: 3rem;
+  }
+
+  .palette th,
+  .palette td {
+    padding: 0.75rem;
   }
 }
