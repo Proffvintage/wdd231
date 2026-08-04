@@ -1,23 +1,47 @@
-import { places } from "../data/discover.mjs";
-
-// Render cards from JSON
 const cardsContainer = document.querySelector(".cards");
-places.forEach((place, i) => {
+
+// Builds one card. The first card is above the fold on every breakpoint, so it
+// loads eagerly; the rest are deferred per the "defer offscreen images" rule.
+function buildCard(place, index) {
   const card = document.createElement("div");
-  card.classList.add(`card${i + 1}`);
+  card.classList.add("discover-card", `card${index + 1}`);
+
+  const loading = index === 0 ? "eager" : "lazy";
+  const priority = index === 0 ? ' fetchpriority="high"' : "";
+
   card.innerHTML = `
     <h2>${place.name}</h2>
-    <figure><img src="${place.image}" alt="${place.name}" loading="lazy"></figure>
+    <figure>
+      <img src="${place.image}" alt="${place.alt}" width="${place.width}" height="${place.height}"
+           loading="${loading}"${priority}>
+    </figure>
     <address>${place.address}</address>
     <p>${place.description}</p>
-    <button class="learn-more-button">Learn More</button>
+    <button class="learn-more-button" type="button">Learn More</button>
   `;
-  cardsContainer.appendChild(card);
-});
+  return card;
+}
+
+async function renderPlaces() {
+  try {
+    const response = await fetch("data/discover.json");
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    const places = await response.json();
+    const fragment = document.createDocumentFragment();
+    places.forEach((place, index) => fragment.appendChild(buildCard(place, index)));
+    cardsContainer.appendChild(fragment);
+  } catch (error) {
+    cardsContainer.innerHTML = `<p class="error-msg">Sorry, the places of interest could not be loaded.</p>`;
+    console.error("Unable to load discover.json:", error);
+  }
+}
+
+renderPlaces();
 
 // Visitor message logic
 const messageArea = document.getElementById("visit-message");
-const lastVisit = localStorage.getItem("lastVisit");
+const lastVisit = Number(localStorage.getItem("lastVisit"));
 const now = Date.now();
 
 if (!lastVisit) {

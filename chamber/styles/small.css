@@ -106,6 +106,9 @@ ul.navigation {
   border: none;
   font-size: 2rem;
   cursor: pointer;
+  /* Inherit the header's white so the icon clears AA on #005f73 (5.7:1)
+     instead of falling back to the UA default button color (2.9:1). */
+  color: #fff;
 }
 
 #hamburger-icon {
@@ -377,12 +380,14 @@ footer {
   font-size: 1rem;
 }
 
+.footer-column h2,
 .footer-column h3,
 .footer-column p,
 .footer-column a {
   color: white;
 }
 
+.footer-column h2,
 .footer-column h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
@@ -576,16 +581,59 @@ footer {
 }
 
 
+/* === DISCOVER PAGE CARDS === */
 .cards {
   display: grid;
   gap: 1rem;
+  width: 100%;
+  padding: 0 1rem 2rem;
 }
-.cards figure img {
-  width: 100%;        /* fills card width */
-  height: 200px;      /* fixed height for uniformity */
-  object-fit: cover;  /* crops without distortion */
-  border-radius: 8px; /* optional polish */
-  display: block;     /* removes inline spacing */
+
+.discover-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Overrides the global "h2 { display: flex }" rule so card titles wrap normally */
+.discover-card h2 {
+  display: block;
+  text-align: center;
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+  color: #003d4d;
+}
+
+.discover-card figure {
+  margin: 0 0 0.75rem;
+}
+
+.discover-card figure img {
+  width: 100%;
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.discover-card address {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.discover-card p {
+  margin: 0 0 1rem;
+  color: #333;
+  font-size: 0.95rem;
+  flex: 1;
 }
 
 .card1 { grid-area: card1; }
@@ -597,8 +645,10 @@ footer {
 .card7 { grid-area: card7; }
 .card8 { grid-area: card8; }
 
+/* Layout 1 – mobile: a single column */
 @media (max-width: 640px) {
   .cards {
+    grid-template-columns: 1fr;
     grid-template-areas:
       "card1"
       "card2"
@@ -611,8 +661,10 @@ footer {
   }
 }
 
+/* Layout 2 – tablet: two equal columns */
 @media (min-width: 641px) and (max-width: 1024px) {
   .cards {
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
       "card1 card2"
       "card3 card4"
@@ -621,19 +673,32 @@ footer {
   }
 }
 
+/* Layout 3 – desktop: four equal columns */
 @media (min-width: 1025px) {
   .cards {
+    max-width: 1400px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
       "card1 card2 card3 card4"
       "card5 card6 card7 card8";
   }
 }
 
+/* Image hover effect – larger views only, deliberately absent on mobile */
 @media (min-width: 641px) {
-  .cards figure img:hover {
+  .discover-card figure {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .discover-card figure img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .discover-card figure img:hover {
     filter: brightness(1.2);
     transform: scale(1.05);
-    transition: all 0.3s ease;
     cursor: pointer;
   }
 }
@@ -658,16 +723,25 @@ h1 {
   text-align: center;
 }
 
-#learn-more-button {
+/* #0077b6 on white text = 4.68:1, passes WCAG AA for normal text */
+.learn-more-button {
   background-color: #0077b6;
-  color:#f5f5f5;
+  color: #fff;
+  border: none;
   padding: 0.75rem 1.25rem;
   border-radius: 4px;
-  margin: auto;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  width: 100%;
+  margin-top: auto;
+  transition: background-color 0.3s ease;
 }
 
-#learn-more-button:hover{
-  background-color:#023e8a;
+.learn-more-button:hover,
+.learn-more-button:focus-visible {
+  background-color: #023e8a;
 }
 
 /* === HOME PAGE LAYOUTS === */
