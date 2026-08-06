@@ -1,42 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Set timestamp on page load
+  // Set timestamp on page load to ISO string
   const timestampEl = document.getElementById("timestamp");
   if (timestampEl) {
     timestampEl.value = new Date().toISOString();
   }
 
-  // Modal Dialog Functionality
-  const modalLinks = document.querySelectorAll(".modal-link");
-  const modals = document.querySelectorAll(".modal");
+  // Native HTML <dialog> modal functionality
+  const modalButtons = document.querySelectorAll(".modal-link");
   const closeButtons = document.querySelectorAll(".modal .close");
 
-  // Open modal on link click
-  modalLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const modalId = link.getAttribute("href");
-      const modal = document.querySelector(modalId);
-      if (modal) {
-        modal.style.display = "flex";
+  // Open dialog when button is clicked
+  modalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const modalId = button.getAttribute("data-modal");
+      const dialog = document.getElementById(modalId);
+      if (dialog) {
+        dialog.showModal();
       }
     });
   });
 
-  // Close modal when close button is clicked
+  // Close dialog when close button is clicked
   closeButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      const modal = btn.closest(".modal");
-      if (modal) {
-        modal.style.display = "none";
+      const dialog = btn.closest(".modal");
+      if (dialog) {
+        dialog.close();
       }
     });
   });
 
-  // Close modal when clicking outside of modal content container
-  window.addEventListener("click", (e) => {
-    modals.forEach(modal => {
-      if (e.target === modal) {
-        modal.style.display = "none";
+  // Close dialog when clicking backdrop (outside modal content)
+  document.querySelectorAll(".modal").forEach(dialog => {
+    dialog.addEventListener("click", (e) => {
+      const rect = dialog.getBoundingClientRect();
+      if (
+        e.clientX < rect.left ||
+        e.clientX > rect.right ||
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom
+      ) {
+        dialog.close();
       }
     });
   });

@@ -12,14 +12,13 @@
   <meta property="og:description" content="Thank you for joining the South Jordan Chamber of Commerce">
   <meta property="og:url" content="https://proffvintage.github.io/wdd231/chamber/thankyou.html">
   <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://proffvintage.github.io/wdd231/chamber/og-selector-banner.png">
+  <meta property="og:image" content="https://proffvintage.github.io/wdd231/chamber/images/og-selector-banner.webp">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="South Jordan Chamber of Commerce">
 
   <!-- Favicon -->
   <link rel="icon" href="images/southjordan-chamber-logo.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/southjordan-chamber-logo.png">
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles/normalize.css">
@@ -29,14 +28,14 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <div class="header-top">
-      <img src="images/southjordan-chamber-logo.png" alt="Site Logo" class="site-logo" fetchpriority="high"/>
+      <img src="images/southjordan-chamber-logo.png" alt="South Jordan Chamber of Commerce logo" class="site-logo" fetchpriority="high">
       <span>South Jordan Chamber of Commerce</span>
-      <button id="hamburger" aria-label="Toggle navigation">
+      <button id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
         <span id="hamburger-icon">☰</span>
       </button>
     </div>
@@ -72,7 +71,7 @@
   <footer>
     <div class="footer-container">
       <div class="footer-column">
-        <h3>South Jordan Chamber of Commerce</h3>
+        <h2>South Jordan Chamber of Commerce</h2>
         <p>123 Chamber Way<br>South Jordan, UT 84095</p>
         <p>Email: info@sjchamber.org</p>
         <p>Phone: (801) 123-4567</p>
@@ -108,18 +107,6 @@
   <!-- Scripts -->
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/date.js" defer></script>
-
-  <!-- Script to parse query string and display submitted values -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const params = new URLSearchParams(window.location.search);
-      document.getElementById("firstName").textContent = params.get("firstName") || "";
-      document.getElementById("lastName").textContent = params.get("lastName") || "";
-      document.getElementById("email").textContent = params.get("email") || "";
-      document.getElementById("mobile").textContent = params.get("mobile") || "";
-      document.getElementById("organization").textContent = params.get("organization") || "";
-      document.getElementById("timestamp").textContent = params.get("timestamp") || "";
-    });
-  </script>
+  <script src="scripts/thankyou.js" defer></script>
 </body>
 </html>

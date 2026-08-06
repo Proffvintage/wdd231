@@ -15,7 +15,6 @@
     <meta property="og:site_name" content="South Jordan Chamber of Commerce">
     <link rel="icon" href="images/southjordan-chamber-logo.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/southjordan-chamber-logo.png">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css">
@@ -26,7 +25,7 @@
 <body>
     <header>
         <div class="header-top">
-            <img src="images/southjordan-chamber-logo.png" alt="South Jordan Chamber of Commerce logo" class="site-logo" fetchpriority="high"/>
+            <img src="images/southjordan-chamber-logo.png" alt="South Jordan Chamber of Commerce logo" class="site-logo" fetchpriority="high">
             <span>South Jordan Chamber of Commerce</span>
             <button id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
                 <span id="hamburger-icon">☰</span>
@@ -60,10 +59,11 @@
                 <input type="text" name="lastName" title="Applicant Last Name" autocomplete="family-name" required>
             </label>
 
-            <!-- Organizational Title -->
+            <!-- Organizational Title – optional, but must match the pattern when filled -->
             <label>
                 Organizational Title:
-                <input type="text" name="orgTitle" title="Organizational Title" autocomplete="organization-title" 
+                <input type="text" name="orgTitle" autocomplete="organization-title"
+                    title="At least 7 characters, using letters, hyphens, and spaces only"
                     pattern="[A-Za-z\-\s]{7,}" placeholder="e.g. Marketing Manager">
             </label>
 
@@ -86,12 +86,13 @@
                 <input type="text" name="organization" title="Organization Name" autocomplete="organization" required>
             </label>
 
-            <!-- Membership Level – Non-Profit, Silver, Gold per spec -->
+            <!-- Membership Level – Non-Profit, Bronze, Silver, Gold per spec -->
             <label>
                 Membership Level:
-                <select name="membership" title="Membership Level" required>
+                <select name="membership" title="Membership Level" autocomplete="off" required>
                 <option value="">Select a level...</option>
                 <option value="np">NP Membership (Non-Profit)</option>
+                <option value="bronze">Bronze Membership</option>
                 <option value="silver">Silver Membership</option>
                 <option value="gold">Gold Membership</option>
                 </select>
@@ -100,41 +101,47 @@
             <!-- Organization Description -->
             <label>
                 Organization Description:
-                <textarea name="description" title="Organization Description"></textarea>
+                <textarea name="description" title="Organization Description" autocomplete="off" rows="4"></textarea>
             </label>
 
-            <!-- Timestamp -->
+            <!-- Timestamp of when the form was loaded, set by scripts/join.js -->
             <input type="hidden" name="timestamp" id="timestamp">
 
             <!-- Submit -->
-            <input type="submit" value="Submit Application">
+            <input type="submit" name="submit" title="Submit your membership application" value="Submit Application">
             </form>
         </section>
 
         <!-- Membership Cards -->
         <section class="membership-cards">
+            <h2 class="membership-heading">Membership Levels</h2>
             <div class="card np">
-            <h2>NP Membership</h2>
+            <h3>NP Membership</h3>
             <p>Perfect for non-profits, no fee required.</p>
-            <a href="#npModal" class="modal-link">Learn More</a>
+            <button type="button" class="modal-link" data-modal="npModal">Learn More</button>
+            </div>
+            <div class="card bronze">
+            <h3>Bronze Membership</h3>
+            <p>An affordable first step into the chamber.</p>
+            <button type="button" class="modal-link" data-modal="bronzeModal">Learn More</button>
             </div>
             <div class="card silver">
-            <h2>Silver Membership</h2>
+            <h3>Silver Membership</h3>
             <p>Enhanced benefits and visibility.</p>
-            <a href="#silverModal" class="modal-link">Learn More</a>
+            <button type="button" class="modal-link" data-modal="silverModal">Learn More</button>
             </div>
             <div class="card gold">
-            <h2>Gold Membership</h2>
+            <h3>Gold Membership</h3>
             <p>Premium benefits and spotlight opportunities.</p>
-            <a href="#goldModal" class="modal-link">Learn More</a>
+            <button type="button" class="modal-link" data-modal="goldModal">Learn More</button>
             </div>
         </section>
         </div>
 
-        <!-- Modals -->
-        <div id="npModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="npModal-title">
+        <!-- Modals – one native HTML dialog per membership level -->
+        <dialog id="npModal" class="modal" aria-labelledby="npModal-title">
             <div class="modal-content">
-            <span class="close" role="button" aria-label="Close Non-Profit modal">&times;</span>
+            <button type="button" class="close" aria-label="Close NP membership benefits">&times;</button>
             <h2 id="npModal-title">NP Membership Benefits</h2>
             <ul>
                 <li>No membership fee</li>
@@ -143,11 +150,24 @@
                 <li>Directory listing</li>
             </ul>
             </div>
-        </div>
+        </dialog>
 
-        <div id="silverModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="silverModal-title">
+        <dialog id="bronzeModal" class="modal" aria-labelledby="bronzeModal-title">
             <div class="modal-content">
-            <span class="close" role="button" aria-label="Close Silver modal">&times;</span>
+            <button type="button" class="close" aria-label="Close Bronze membership benefits">&times;</button>
+            <h2 id="bronzeModal-title">Bronze Membership Benefits</h2>
+            <ul>
+                <li>Standard directory listing</li>
+                <li>Discounted event registration</li>
+                <li>Monthly chamber newsletter</li>
+                <li>Access to training workshops</li>
+            </ul>
+            </div>
+        </dialog>
+
+        <dialog id="silverModal" class="modal" aria-labelledby="silverModal-title">
+            <div class="modal-content">
+            <button type="button" class="close" aria-label="Close Silver membership benefits">&times;</button>
             <h2 id="silverModal-title">Silver Membership Benefits</h2>
             <ul>
                 <li>Spotlight positions on homepage</li>
@@ -157,11 +177,11 @@
                 <li>Social media promotion</li>
             </ul>
             </div>
-        </div>
+        </dialog>
 
-        <div id="goldModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="goldModal-title">
+        <dialog id="goldModal" class="modal" aria-labelledby="goldModal-title">
             <div class="modal-content">
-            <span class="close" role="button" aria-label="Close Gold modal">&times;</span>
+            <button type="button" class="close" aria-label="Close Gold membership benefits">&times;</button>
             <h2 id="goldModal-title">Gold Membership Benefits</h2>
             <ul>
                 <li>Premium advertising</li>
@@ -171,13 +191,13 @@
                 <li>Top directory placement</li>
             </ul>
             </div>
-        </div>
+        </dialog>
 
     </main>
     <footer>
     <div class="footer-container">
         <div class="footer-column">
-        <h3>South Jordan Chamber of Commerce</h3>
+        <h2>South Jordan Chamber of Commerce</h2>
         <p>123 Chamber Way<br>South Jordan, UT 84095</p>
         <p>Email: info@sjchamber.org</p>
         <p>Phone: (801) 123-4567</p>
